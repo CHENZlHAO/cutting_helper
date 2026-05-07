@@ -1,0 +1,2 @@
+# cutting_helper
+一个用于动图生成日常vlog的demo，作用是将日常随手拍的内容用ai转场连接起来
