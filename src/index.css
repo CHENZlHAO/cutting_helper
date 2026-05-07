@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', 'PingFang SC', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: linear-gradient(135deg, #fff5f5 0%, #fffbf0 50%, #f5f3ff 100%);
+  min-height: 100vh;
+}
+
+/* Cute gradient scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(244, 114, 182, 0.05);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fbcfe8, #ddd6fe);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f9a8d4, #c4b5fd);
+}
+
+/* Card hover lift effect */
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -8px rgba(244, 114, 182, 0.2), 0 4px 12px -2px rgba(244, 114, 182, 0.1);
+}
+
+/* Page enter animation */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.page-enter {
+  animation: page-in 0.35s ease-out;
+}
+
+/* Floating sticker decorations */
+.sticker {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 2px 4px rgba(244, 114, 182, 0.2));
+}
+.sticker-float {
+  animation: float-sticker 4s ease-in-out infinite;
+}
+.sticker-float-delayed {
+  animation: float-sticker 4s ease-in-out 1.5s infinite;
+}
+.sticker-float-slow {
+  animation: float-sticker 6s ease-in-out 0.5s infinite;
+}
+@keyframes float-sticker {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* Success confetti */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: confetti-fall 1.2s ease-out forwards;
+}

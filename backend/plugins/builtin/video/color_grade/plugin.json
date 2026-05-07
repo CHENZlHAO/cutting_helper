@@ -1,0 +1,15 @@
+{
+  "name": "cinematic_color_grade",
+  "version": "1.0.0",
+  "description": "Apply cinematic color grading to video clips",
+  "author": "builtin",
+  "plugin_type": "video_stylization",
+  "parameters_schema": {
+    "type": "object",
+    "properties": {
+      "contrast": {"type": "number", "minimum": 0.5, "maximum": 2.0, "default": 1.1},
+      "saturation": {"type": "number", "minimum": 0, "maximum": 2.0, "default": 1.0},
+      "brightness": {"type": "number", "minimum": -0.5, "maximum": 0.5, "default": 0.0}
+    }
+  }
+}

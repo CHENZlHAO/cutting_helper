@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: cutting-helper
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
